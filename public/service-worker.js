@@ -5,7 +5,14 @@ const CACHE_NAME = 'static-cache-v1';
 
 // Add list of files to cache here.
 const FILES_TO_CACHE = [
-  '/offline.html',
+  '/index.html',
+  '/build/bundle.css',
+  '/build/bundle.js',
+  '/css/mercury-displayboldsc-webfont.woff2',
+  '/images/_cover.jpg',
+  '/images/rslide-george-miliotis.jpg',
+  '/images/rslide-06.jpg',
+  '/favicon.png',
 ];
 
 self.addEventListener('install', (evt) => {
@@ -50,7 +57,7 @@ self.addEventListener('fetch', (evt) => {
           .catch(() => {
             return caches.open(CACHE_NAME)
                 .then((cache) => {
-                  return cache.match('offline.html');
+                  return cache.match('index.html');
                 });
           })
   );
