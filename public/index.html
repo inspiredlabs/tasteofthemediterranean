@@ -1,46 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+<html lang="en" class="h-100 overflow-hidden
+system w-100 backface-hidden">
+<!-- vw-100 vh-100 smooth-scroll backface-hidden touch-manipulation -->
+<!-- `h-100 overflow-hidden && h-100 overflow-auto`: http://stackoverflow.com/questions/12046315/ddg#17899813 -->
 
-    <title>Svelte PWA</title>
+<head>
+  <meta charset="utf-8" />
 
-    <link rel="manifest" href="/manifest.json" />
-    <meta name="description" content="Svelte PWA starter template" />
-    <meta name="theme-color" content="#2F3BA2" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <meta name="apple-mobile-web-app-title" content="Svelte PWA" />
-    <link rel="apple-touch-icon" href="/images/icons/icon-152x152.png" />
+  <title>Taste of the Mediterranean</title>
 
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="stylesheet" href="/global.css" />
-    <link rel="stylesheet" href="/build/bundle.css" />
+  <!-- crossorigin="use-credentials" || crossorigin="anonymous"
+		- from: https://blog.logrocket.com/building-a-pwa-with-svelte/
+		- from:	https://rodneylab.com/sveltekit-pwa/
+	-->
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="description" content="Taste of the Mediterranean" />
+  <meta name="theme-color" content="#FAFAE0">
 
-    <!-- You can remove this is you don't want to make your PWA installable -->
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
-    ></script>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="apple-mobile-web-app-title" content="Taste&thinsp;of&thinsp;the&thinsp;.Me" />
 
-    <script defer src="/build/bundle.js"></script>
-  </head>
 
-  <body>
-    <noscript>
-      <div>Oops! Javascript required here! Allow it and try again!</div>
-    </noscript>
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
 
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker.register("/service-worker.js").then((reg) => {
-            console.log("Service worker registered.", reg);
-          });
-        });
-      }
-    </script>
-  </body>
+  <!-- Svelte output: -->
+  <link rel="stylesheet" href="/global.css" />
+  <link rel="stylesheet" href="/build/bundle.css" />
+
+  <style>
+  ::selection {background: #FF6D00}
+  ::-moz-selection {background: #FF6D00}
+
+  /* NOT Inclusively Hidden: css-tricks.com/inclusively-hidden/ */
+  .visually-hidden {
+  	clip: rect(0 0 0 0);
+  	clip-path: inset(50%);
+  	height: 1px;
+  	overflow: hidden;
+  	position: absolute;
+  	white-space: nowrap;
+  	width: 1px;
+  }
+
+  /* Loading: https://stackoverflow.com/questions/59605327/how-do-you-load-and-use-a-custom-font-in-svelte*/
+  /* Compatability of user's Android?: https://css-tricks.com/snippets/css/using-font-face/*/
+  @font-face {
+  font-family: 'mercurydisplay_bold_sc';
+  src: url('./css/mercury-displayboldsc-webfont.woff2') format('woff2');
+  /* Different line height: `pt3`>`pt1` in `<CtaTop>`: https://cloudconvert.com/ttf-to-woff2 orig. `pt3`: https://fontsup.com/font/mercury-display-bold-sc.html */
+  }
+
+  .mercury {
+  	font-family: 'mercurydisplay_bold_sc', serif; /* Mercury-DisplayBoldSC */
+  }
+
+  .slidy-ul {
+  	will-change: transform;
+  }
+  .ts-white  {
+  	text-shadow: 0px 1px 0px rgb(255 255 255 / 80%);
+  }
+
+  p { padding: 0 1rem 0 1rem }
+  p:last-child { margin:0 0 20vh 0; padding: 0 1rem 3rem 1rem }
+  table{margin:0 0 20vh 0;}
+
+  .verdana { font-family: Verdana, Geneva, sans-serif }
+
+  /* `#fafae1` -From: greekfoods.co.uk */
+  .lemon { color: hsla(60,71%,93%,1); }
+  .bg-lemon { background-color: hsla(60,71%,93%,1); }/* consider this: stackoverflow.com/questions/55329996/how-to-create-color-shades-using-css-variables-similar-to-darken-of-sass */
+  .b--lemon { border-color: hsla(60,71%,93%,1); }
+
+  .hover-lemon:hover,
+  .hover-lemon:focus { color: hsla(60,71%,93%,1); }
+
+  .hover-bg-lemon:hover,
+  .hover-bg-lemon:focus { background-color: hsla(60,71%,93%,1); }
+
+
+  .mw65 { max-width: 34rem; }
+  /* Consider more, for `thumb.header` length: https://tachyons-tldr.vercel.app/#/scales#Widths */
+  .mw-20 {
+    max-width: 20%;
+  }
+
+  @media screen and (min-width: 30em) {
+    .mw-20-ns {
+      max-width: 20%;
+    }
+  }
+
+  @media screen and (min-width: 30em) and (max-width: 60em) {
+    .mw-20-m {
+      max-width: 20%;
+    }
+  }
+
+  @media screen and (min-width: 60em) {
+    .mw-20-l {
+      max-width: 20%;
+    }
+  }
+
+  .w-auto-important {
+  	width: auto!important;
+  }
+
+  .h-auto-important {
+  	height: auto!important;
+  }
+  </style>
+
+  <!-- You can remove this is you don't want to make your PWA installable -->
+  <script
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@pwabuilder/pwainstall"
+  ></script>
+
+  <script defer src="/build/bundle.js"></script>
+</head>
+
+<body
+	style="
+	overscroll-behavior-y: none;
+	background-image: url('./images/_cover.jpg');backdrop-filter: blur(6px)"
+	class="no-clutter no-select
+	h-100 overflow-hidden w-100 fixed
+	ma0
+	bg-black bg-center bg-blur cover z-0
+	lh-copy ma0 pa0  vh-100">
+<!-- let cover = './images/_cover.jpg'; /*{cover}*/ -->
+<!-- Debug: `vh-100` iOS not scaling on orientation -->
+<noscript>
+  <div>Javascript required.</div>
+</noscript>
+
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("/service-worker.js").then((reg) => {
+        console.log("Service worker registered.", reg);
+      });
+    });
+  }
+</script>
+</body>
 </html>

@@ -1,32 +1,49 @@
+<script context="module">
+	// Track deploy: app.netlify.com/sites/greekfoods/deploys/
+	export const prerender = true;
+</script>
 <script>
-	export let name;
+	import SlidyInstance from './SlidyInstance.svelte'; /* Simple: https://svelte.dev/repl/8910cf8db1c947dba57faaf5711c8314?version=3.41.0*/
+/*
+Tween basics: https://svelte.dev/examples#tweened
+*/
+
+/* spread operator `[...thing]` works with: `const thing = {my:"thing_one",}`, see: FrontEnd Masters, 4. Props */
+
+/* default: https://svelte.dev/examples#text-inputs `start`=left || `middle`=centred || `end`=right, see: https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor */
+
 </script>
 
-<main>
-	<h1>Hello {name}!</h1>
-	<p>This is a starter template for a Svelte PWA, based in the <a href="https://github.com/sveltejs/template" target="_blank">Svelte template</a></p>
-	<p>You will find the manifest.json file and the service-worker.js file in the public folder</p>
-	<p>To update the proper icons for the PWA check <i>/public/images/icons</i></p>
+<!-- bg-blur  -->
+
+<!-- <Banner bg="bg-petrol">
+<img
+class="w2 h2 white"
+src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+style="background-image: url({myfile});"
+alt={myfile}
+>
+<!-- <div class="ttu tracked-mega">Three</div> -- >
+<!-- <div class="ttu tracked-mega">Four</div> -- >
+
+<!-- <button
+	class="dib pointer no-underline br0 f6 f5-ns f6-l b pv3 ph2 ph1-ns ph3-m pv2-l ph2-l ba bw2-ns bb b--black black bg-white grow ttu tracked tracked-mega-ns"
+	class:test="{current === true}"
+	on:click="{() => current = true}"
+>Offerta speciale!</button> -- >
+</Banner-->
+
+<main class="overflow-hidden w-100 vh-100 backface-hidden z-1 relative no-select">
+<SlidyInstance/>
 </main>
-
-<style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
+<!--style global>
+	/* remove border -From: stackoverflow.com/questions/28870932/how-to-remove-white-border-from-blur-background-image#42963980 */
+	.bg-blur::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		backdrop-filter: blur(4px); /* apply the blur */
+		pointer-events: none; /* make the overlay click-through */
 	}
-
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-</style>
+	</style-->
