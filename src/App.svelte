@@ -2,6 +2,7 @@
 	// Track deploy: app.netlify.com/sites/greekfoods/deploys/
 	export const prerender = true;
 </script>
+
 <script>
 	import SlidyInstance from './SlidyInstance.svelte'; /* Simple: https://svelte.dev/repl/8910cf8db1c947dba57faaf5711c8314?version=3.41.0*/
 /*

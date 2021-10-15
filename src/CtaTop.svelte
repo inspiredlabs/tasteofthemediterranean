@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <nav
 style="pointer-events:fill"
 class="w-third-m w-third-l z-1 pt4

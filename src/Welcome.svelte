@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
   let cover = './images/rslide-06.jpg';
 </script>

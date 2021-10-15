@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <nav class="w-third-m w-third-l z-1 fl
 dn dn-ns flex-m flex-l flex-nowrap flex-row justify-center">
 

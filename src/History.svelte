@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 let thumbnail = './images/rslide-george-miliotis.jpg';
 </script>

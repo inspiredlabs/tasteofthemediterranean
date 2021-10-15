@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 // Originally: https://www.youtube.com/watch?v=T64FIL1ii-0
 import { prices } from './prices.js'; /* charachter symbols in JSON req. HexCode: javascripter.net/faq/accentedcharacters.htm */

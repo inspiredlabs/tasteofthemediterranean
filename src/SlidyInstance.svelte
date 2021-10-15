@@ -1,3 +1,7 @@
+<script context="module">
+	export const prerender = true;
+</script>
+
 <script>
 import { onMount } from 'svelte';
 import { Slidy } from 'svelte-slidy' // install: `npm i -D svelte-slidy`
