@@ -1,6 +1,3 @@
-<script context="module">
-	export const prerender = true;
-</script>
 <script>
 export let price;
 export let key;
@@ -14,7 +11,7 @@ export let key;
 		<tr class="hover-bg-lemon transition" data-num={index+1}>
 			<td class="w-two-thirds ttu">{ p.Item }</td>
 			<td class="w-20 tr">{ p.Volume ? p.Volume : '' }</td>
-			<td class="tr">{ p.Price }</td>
+			<td class="tr dn">{ p.Price }</td>
 		</tr>
 	{/each}
 

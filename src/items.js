@@ -10,36 +10,15 @@ import Prices from './Prices.svelte';
 export default [
 {
 id:0,
-src: './images/award.jpg',
-header: "Welcome",
+src: './images/marzo.svg',
+header: "Prices",
 text: undefined,
-component: Welcome
+component: Prices
 },
 {
 id:1,
-src: './images/bowers.jpg',
-header: "History",
-text: "A London based family business",
-component: History
-},
-{
-id:2,
-src: './images/locality.svg',
-header: "Foods",
-text: "Fresh never frozen",
-component: Foods
-},
-{
-id:3,
-src: './images/marzo.jpg',
-header: "Variations",
-text: undefined,
-component: Variations
-},
-{
-id:4,
 src: './images/marzo.svg',
-header: "Prices",
+header: "Deals",
 text: undefined,
 component: Prices
 }
