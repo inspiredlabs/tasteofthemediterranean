@@ -17,7 +17,7 @@ flex flex-ns dn-m dn-l flex-nowrap flex-row justify-around">
 <!-- style="box-shadow: inset 0 0 1rem #0ff;/* stackoverflow.com/questions/8452739/css-inset-borders */" -->
 <a
 style="line-height:4rem"
-href="whatsapp://send?text=I%27d%20like%20to%20order...&phone=+447426646183&abid=+447426646183"
+href="whatsapp://send?text=I%27d%20like%20to%20order...&phone=+447426646183"
 class="
 link
 h3 pt1
