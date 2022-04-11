@@ -9,7 +9,7 @@ import App from "./App.svelte";
 <!-- <a href="https://web.whatsapp.com/send?text=I%27d%20like%20to%20order...&phone=+447426646183&abid=+447426646183">Whatsapp desktop</a> -->
   <a
     style="line-height:8rem"
-    href="whatsapp://send?text=I%27d%20like%20to%20order...&phone=+447426646183"
+    href="https://wa.me/447426646183/?text=I%27d%20like%20to%20order..."
     class="
     link
     h4 w-50
