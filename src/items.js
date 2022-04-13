@@ -11,14 +11,14 @@ export default [
 {
 id:0,
 src: './images/marzo.svg',
-header: "Prices",
+header: "Items",
 text: undefined,
 component: Prices
 },
 {
 id:1,
 src: './images/marzo.svg',
-header: "Deals",
+header: "Items",
 text: undefined,
 component: Prices
 }

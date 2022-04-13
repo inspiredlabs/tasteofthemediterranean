@@ -53,7 +53,7 @@ const carousel = {
 	}
 
 $: duration = 0;
-$: index = 2;
+$: index = 0;
 
 onMount(() => {
 	duration = 0;//carousel.options.duration
